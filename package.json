@@ -1,0 +1,58 @@
+{
+  "name": "api-knight-backend",
+  "version": "0.1.0",
+  "description": "基于 Egg.js 的HTTP接口管理平台后端",
+  "private": true,
+  "egg": {
+    "declarations": true
+  },
+  "scripts": {
+    "start:https": "egg-scripts start --daemon --port=443 --https.key='/home/ubuntu/ApiKnight/ssh_config/lyyfsq.club_nginx/lyyfsq.club.key' --https.cert='/home/ubuntu/ApiKnight/ssh_config/lyyfsq.club_nginx/lyyfsq.club_bundle.crt'",
+    "start": "egg-scripts start --daemon --title=template-node-egg --port=7002",
+    "stop": "egg-scripts stop --title=template-node-egg --port=7002",
+    "start:test": "npx cross-env cross-env EGG_SERVER_ENV=test egg-scripts start --daemon --title=template-node-egg-test --port=7001",
+    "stop:test": "npx cross-env cross-env EGG_SERVER_ENV=test egg-scripts stop --title=template-node-egg-test --port=7001",
+    "dev": "npx cross-env cross-env EGG_SERVER_ENV=local egg-bin dev --port=7001",
+    "debug": "egg-bin debug",
+    "test": "npm run lint -- --fix && npm run test-local",
+    "test:local": "egg-bin test",
+    "cov": "egg-bin cov",
+    "lint": "eslint .",
+    "ci": "npm run lint && npm run cov",
+    "autod": "autod"
+  },
+  "dependencies": {
+    "axios": "^1.4.0",
+    "bcrypt": "^5.1.0",
+    "cross-env": "^7.0.3",
+    "egg": "^2.33.1",
+    "egg-cors": "^2.2.3",
+    "egg-jwt": "^3.1.7",
+    "egg-router-plus": "^2.0.0",
+    "egg-scripts": "^2.15.2",
+    "egg-sequelize": "^6.0.0",
+    "egg-swagger-doc": "^2.3.2",
+    "egg-validate": "^2.0.2",
+    "egg-validate-plus": "^1.1.6",
+    "mocker-dsl-core": "^0.1.6",
+    "moment": "^2.29.1",
+    "mysql2": "^2.3.3",
+    "nodemailer": "^6.9.4",
+    "nodemailer-smtp-transport": "^2.7.4",
+    "prom-client": "^14.2.0",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "autod": "^3.1.1",
+    "autod-egg": "^1.1.0",
+    "egg-bin": "^4.16.4",
+    "egg-ci": "^1.19.0",
+    "egg-mock": "^4.2.0",
+    "eslint": "^8.5.0",
+    "eslint-config-egg": "^12.2.1"
+  },
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "license": "MIT"
+}
