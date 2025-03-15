@@ -4,10 +4,6 @@ module.exports = {
   write: true,
   prefix: '^',
   plugin: 'autod-egg',
-  test: [
-    'test',
-    'benchmark'
-  ],
   dep: [
     'egg',
     'egg-scripts'
